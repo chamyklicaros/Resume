@@ -1,0 +1,162 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url(Images/Background.jpg);
+}
+
+.container{
+    height: 100%;
+    width: 100%;
+}
+
+.img-container{
+    cursor: pointer;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.img-container:hover{
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.img-container:active{
+    cursor: grabbing;
+}
+
+.user{
+    height: 50px;
+    width: 50px;
+    pointer-events: none;
+}
+
+.text{
+    margin: 5px 0 0 0;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    pointer-events: none;
+    user-select: none;
+}
+
+.modal{
+    display: flex;
+    background: gray;
+    flex-direction: column;
+    width: 650px;
+    height: 80vh;
+    max-height: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.modal-top-aboutMe{
+    background-color: #333;
+    color: white;
+    padding: 10px 15px;
+    font-weight: bold;
+    cursor: grab;
+    user-select: none;
+}
+
+.modal-top-aboutMe:active{
+    cursor: grabbing;
+}
+
+.X{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+.X:hover{
+    background-color: red;
+}
+
+.aboutMe{
+    padding: 20px;
+    color: white;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex: 1;
+    height: 0;
+}
+
+.aboutMe h2{
+    margin-top: 0;
+    color: #fff;
+    border-bottom: 2px solid #555;
+    padding-bottom: 10px;
+}
+
+.aboutMe h3{
+    color: #ddd;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.aboutMe p{
+    margin: 10px 0;
+}
+
+.aboutMe ul{
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.aboutMe li{
+    margin: 5px 0;
+}
+
+/* Custom scrollbar */
+.aboutMe::-webkit-scrollbar{
+    width: 8px;
+}
+
+.aboutMe::-webkit-scrollbar-track{
+    background: #555;
+}
+
+.aboutMe::-webkit-scrollbar-thumb{
+    background: #888;
+    border-radius: 4px;
+}
+
+.aboutMe::-webkit-scrollbar-thumb:hover{
+    background: #aaa;
+}
+
+.taskBar{
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    height: 50px;
+    justify-content: flex-end;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    backdrop-filter: blur(10px);
+}
+
+.dateTime{
+    margin: 20px;
+    font-weight: 500;
+}
