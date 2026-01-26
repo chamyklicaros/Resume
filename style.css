@@ -18,8 +18,7 @@ body{
     border-radius: 5px;
     transition: background-color 0.3s ease;
     position: absolute;
-    top: 20px;
-    left: 20px;
+    user-select: none;
 }
 
 .img-container:hover{
@@ -28,6 +27,26 @@ body{
 
 .img-container:active{
     cursor: grabbing;
+}
+
+#cv-icon{
+    top: 20px;
+    left: 20px;
+}
+
+#minesweeper-icon{
+    top: 20px;
+    left: 120px;
+}
+
+#tictactoe-icon{
+    top: 20px;
+    left: 220px;
+}
+
+#work-icon{
+    top: 20px;
+    left: 320px;
 }
 
 .user{
@@ -107,6 +126,27 @@ body{
     padding-bottom: 10px;
 }
 
+.aboutMe .profile-img{
+    width: 150px;
+    height: 150px;
+    background-color: #555;
+    border: 3px solid #888;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px auto;
+    color: #aaa;
+    font-style: italic;
+    overflow: hidden;
+}
+
+.aboutMe .profile-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .aboutMe h3{
     color: #ddd;
     margin-top: 20px;
@@ -149,14 +189,313 @@ body{
     background-color: rgba(255, 255, 255, 0.8);
     width: 100%;
     height: 50px;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     position: fixed;
     bottom: 0;
     backdrop-filter: blur(10px);
 }
 
+.settings-btn{
+    margin-left: 20px;
+    padding: 8px 16px;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.settings-btn:hover{
+    background-color: #333;
+}
+
+.taskbar-center{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #333;
+    font-weight: bold;
+    font-size: 14px;
+}
+
 .dateTime{
     margin: 20px;
     font-weight: 500;
+}
+
+/* Minesweeper Game Styles */
+.game-content{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    flex: 1;
+    height: 0;
+}
+
+.game-info{
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+    color: white;
+    font-weight: bold;
+}
+
+.minesweeper-grid{
+    display: grid;
+    gap: 2px;
+    background-color: #555;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.mine-cell{
+    width: 30px;
+    height: 30px;
+    background-color: #bbb;
+    border: 2px outset #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    user-select: none;
+}
+
+.mine-cell:active{
+    border-style: inset;
+}
+
+.mine-cell.revealed{
+    background-color: #999;
+    border-style: solid;
+    border-color: #888;
+    cursor: default;
+}
+
+.mine-cell.flagged{
+    background-color: #bbb;
+    color: red;
+    font-size: 16px;
+}
+
+.mine-cell.mine{
+    background-color: #f44;
+}
+
+.reset-btn{
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.reset-btn:hover{
+    background-color: #45a049;
+}
+
+/* Tic Tac Toe Styles */
+.tictactoe-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    background-color: #555;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.ttt-cell{
+    background-color: #ddd;
+    border: none;
+    font-size: 48px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 4px;
+}
+
+.ttt-cell:hover:not(:disabled){
+    background-color: #ccc;
+}
+
+.ttt-cell:disabled{
+    cursor: not-allowed;
+}
+
+.game-status{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Settings Modal */
+.settings-modal{
+    display: flex;
+    background: gray;
+    flex-direction: column;
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.settings-content{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.restart-btn{
+    padding: 12px 30px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.restart-btn:hover{
+    background-color: #c0392b;
+}
+
+/* Work/Portfolio Modal */
+.work-content{
+    padding: 20px;
+    color: white;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex: 1;
+    height: 0;
+}
+
+.work-item{
+    background-color: #555;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.work-link{
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.work-link .work-item{
+    cursor: pointer;
+    position: relative;
+}
+
+.work-link .work-item::after{
+    content: "🔗 View Project";
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.work-link:hover .work-item::after{
+    opacity: 1;
+}
+
+.work-item:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.work-item h3{
+    margin-top: 0;
+    color: #4CAF50;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 10px;
+}
+
+.work-item .work-tech{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.work-tech-tag{
+    background-color: #333;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    color: #4CAF50;
+}
+
+.work-item p{
+    margin: 10px 0;
+    color: #ddd;
+}
+
+.work-item .work-date{
+    color: #aaa;
+    font-style: italic;
+    font-size: 14px;
+}
+
+.work-content::-webkit-scrollbar{
+    width: 8px;
+}
+
+.work-content::-webkit-scrollbar-track{
+    background: #555;
+}
+
+.work-content::-webkit-scrollbar-thumb{
+    background: #888;
+    border-radius: 4px;
+}
+
+.work-content::-webkit-scrollbar-thumb:hover{
+    background: #aaa;
+}
+
+/* Selection Box */
+.selection-box{
+    position: absolute;
+    border: 2px solid #0078d7;
+    background-color: rgba(0, 120, 215, 0.3);
+    pointer-events: none;
+    display: none;
+    z-index: 1000;
+}
+
+.img-container.selected{
+    background-color: rgba(0, 120, 215, 0.5);
+    border: 2px solid #0078d7;
 }

@@ -3,88 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" href="style.css">
-    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <title>Desktop</title>
 </head>
 <body>
-    <div class = "container">
-        <div class = "img-container">
-            <img class ="user" src="Images/User.png">
-            <p class = "text">CV</p>
+    <div class="container">
+        <!-- CV Icon -->
+        <div class="img-container" id="cv-icon">
+            <img class="user" src="Images/User.png">
+            <p class="text">CV</p>
         </div>
         
+        <!-- Minesweeper Icon -->
+        <div class="img-container" id="minesweeper-icon">
+            <img class="user" src="Images/Minesweeper.png">
+            <p class="text">Minesweeper</p>
+        </div>
+        
+        <!-- Tic Tac Toe Icon -->
+        <div class="img-container" id="tictactoe-icon">
+            <img class="user" src="Images/tic-tac-toe.png">
+            <p class="text">Tic Tac Toe</p>
+        </div>
+
+        <!-- Works Icon -->
+        <div class="img-container" id="work-icon">
+            <img class="user" src="Images/Works.png">
+            <p class="text">Works</p>
+        </div>
+    </div>
+    
+    <!-- CV Modal -->
+    <div class="modal" id="cv-modal">
+        <div class="modal-top-aboutMe">
+            About Me
+        </div>
+        <div class="X">X</div>
+        <div class="aboutMe">
+            <h2>Eudesto Chamyk G. Licaros</h2>
+            
+            <div class="profile-img"><img src = "Images/Pic.jpeg"></div>
+            
+            <h3>📧 Contact Information</h3>
+            <p>Email: chamyklicaros11@gmail.com</p>
+            <p>Phone: +63 966 452 2793</p>
+            <p>Location: Paranaque City, National Capital Region, Philippines</p>
+            
+            <h3>👤 Professional Summary</h3>
+            <p>A passionate and dedicated professional with expertise in web development and design. Committed to creating innovative solutions and continuously learning new technologies.</p>
+            
+            <h3>🎓 Education</h3>
+            <p><strong>Bachelor of Science in Computer Engineering</strong></p>
+            <p>Polytechnic University of the Philippines | 2023 - 2027</p>
+
+            
+            <h3>💼 Work Experience</h3>
+            <p><strong>IT Intern</strong> - Global Technological Trading Inc | 2025 - 2025</p>
+
+            <h3>🛠️ Technical Skills</h3>
+            <ul>
+                <li>HTML5, CSS3, JavaScript</li>
+                <li>Node.js</li>
+                <li>Python</li>
+                <li>C</li>
+                <li>C++</li>
+                <li>Git, GitHub</li>
+                <li>Responsive Design</li>
+                <li>UI/UX Design Principles</li>
+                <li>Embedded Systems</li>
+            </ul>
+            
+          </div>    
+    </div>
+    
+    <!-- Minesweeper Modal -->
+    <div class="modal" id="minesweeper-modal">
+        <div class="modal-top-aboutMe">
+            Minesweeper
+        </div>
+        <div class="X">X</div>
+        <div class="game-content">
+            <div class="game-info">
+                <div id="mine-counter">Mines: 15</div>
+            </div>
+            <div class="minesweeper-grid"></div>
+            <button class="reset-btn" id="mine-reset">New Game</button>
+            <p style="color: white; margin-top: 10px;">Left-click to reveal, Right-click to flag</p>
+        </div>
+    </div>
+    
+    <!-- Tic Tac Toe Modal -->
+    <div class="modal" id="tictactoe-modal">
+        <div class="modal-top-aboutMe">
+            Tic Tac Toe
+        </div>
+        <div class="X">X</div>
+        <div class="game-content">
+            <div class="game-status" id="ttt-status">Player X's Turn</div>
+            <div class="tictactoe-grid">
+                <button class="ttt-cell"></button>
+                <button class="ttt-cell"></button>
+                <button class="ttt-cell"></button>
+                <button class="ttt-cell"></button>
+                <button class="ttt-cell"></button>
+                <button class="ttt-cell"></button>
+                <button class="ttt-cell"></button>
+                <button class="ttt-cell"></button>
+                <button class="ttt-cell"></button>
+            </div>
+            <button class="reset-btn" id="ttt-reset">New Game</button>
+        </div>
     </div>
 
-    <div class = "modal">
-        <div class = "modal-top-aboutMe">
-            About Me
+    <!-- Works/Portfolio Modal -->
+    <div class="modal" id="work-modal">
+        <div class="modal-top-aboutMe">
+            My Works & Projects
+        </div>
+        <div class="X">X</div>
+        <div class="work-content">
+
+            <a href="https://github.com/me50/chamyklicaros" target="_blank" class="work-link">
+                <div class="work-item">
+                    <h3>🌐 Game Imporium</h3>
+                    <p class="work-date">December 2025</p>
+                    <p>A collage of games created through the pygame library</p>
+                    <div class="work-tech">
+                        <span class="work-tech-tag">Python</span>
+                        <span class="work-tech-tag">Pygame</span>
+                        <span class="work-tech-tag">Game Development</span>
+                    </div>
+                </div>
+            </a>
+
+
+
 
         </div>
-        <div class="X"> X </div>
-        <div class = "aboutMe">
-    <h2>Eudesto Chamyk G. Licaros</h2>
-    
-    <h3>📧 Contact Information</h3>
-    <p>Email: eudesto.licaros@email.com</p>
-    <p>Phone: +63 XXX XXX XXXX</p>
-    <p>Location: Paranaque City, National Capital Region, Philippines</p>
-    
-    <h3>👤 Professional Summary</h3>
-    <p>A passionate and dedicated professional with expertise in web development and design. Committed to creating innovative solutions and continuously learning new technologies.</p>
-    
-    <h3>🎓 Education</h3>
-    <p><strong>Bachelor of Science in Computer Science</strong></p>
-    <p>University Name | 2020 - 2024</p>
-    <p>Relevant coursework: Web Development, Software Engineering, Database Management</p>
-    
-    <h3>💼 Work Experience</h3>
-    <p><strong>Web Developer</strong> - Company Name (2023 - Present)</p>
-    <ul>
-        <li>Developed responsive web applications using HTML, CSS, and JavaScript</li>
-        <li>Collaborated with design team to implement user-friendly interfaces</li>
-        <li>Optimized website performance and user experience</li>
-    </ul>
-    
-    <p><strong>Intern Developer</strong> - Tech Startup (2022 - 2023)</p>
-    <ul>
-        <li>Assisted in front-end development projects</li>
-        <li>Learned modern web development frameworks and tools</li>
-        <li>Participated in code reviews and team meetings</li>
-    </ul>
-    
-    <h3>🛠️ Technical Skills</h3>
-    <ul>
-        <li>HTML5, CSS3, JavaScript</li>
-        <li>React, Node.js</li>
-        <li>Git, GitHub</li>
-        <li>Responsive Design</li>
-        <li>UI/UX Design Principles</li>
-    </ul>
-    
-    <h3>🏆 Projects</h3>
-    <p><strong>Portfolio Website</strong></p>
-    <p>Created a personal portfolio showcasing projects and skills with modern design principles.</p>
-    
-    <p><strong>Task Management App</strong></p>
-    <p>Built a full-stack application for managing daily tasks with user authentication.</p>
-    
-    <h3>🌟 Interests</h3>
-    <p>Web Design, UI/UX, Open Source Contribution, Continuous Learning</p>
-</div>
     </div>
 
+    <!-- Settings Modal -->
+    <div class="modal settings-modal" id="settings-modal">
+        <div class="modal-top-aboutMe">
+            Settings
+        </div>
+        <div class="X">X</div>
+        <div class="settings-content">
+            <button class="restart-btn">Restart</button>
+        </div>
+    </div>
+    
     <div class="taskBar">
-        <div class = "dateTime">day,month,year: hour</div>
-
+        <button class="settings-btn">Settings</button>
+        <div class="taskbar-center">Double click on the Icons</div>
+        <div class="dateTime">day,month,year: hour</div>
     </div>
-
-    <script src ="script.js">
-
-
-    </script>
     
-  
-    
-    
+    <script src="script.js"></script>
 </body>
 </html>
