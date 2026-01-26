@@ -4,6 +4,7 @@ const minesweeperModal = document.querySelector('#minesweeper-modal');
 const tictactoeModal = document.querySelector('#tictactoe-modal');
 const settingsModal = document.querySelector('#settings-modal');
 const workModal = document.querySelector('#work-modal');
+const certificateModal = document.querySelector('#certificate');
 
 const cvIcon = document.querySelector('#cv-icon');
 const minesweeperIcon = document.querySelector('#minesweeper-icon');
@@ -11,6 +12,7 @@ const tictactoeIcon = document.querySelector('#tictactoe-icon');
 const settingsBtn = document.querySelector('.settings-btn');
 const restartBtn = document.querySelector('.restart-btn');
 const workIcon = document.querySelector('#work-icon');
+const certificationIcon = document.querySelector('#certification-icon');
 
 const dateTimeDisplay = document.querySelector('.dateTime');
 
@@ -20,6 +22,7 @@ minesweeperModal.style.display = 'none';
 tictactoeModal.style.display = 'none';
 settingsModal.style.display = 'none';
 workModal.style.display = 'none';
+certificateModal.style.display = 'none';
 
 // Open modals on double-click
 cvIcon.addEventListener('dblclick', () => {
@@ -38,6 +41,10 @@ tictactoeIcon.addEventListener('dblclick', () => {
 
 workIcon.addEventListener('dblclick', () => {
     workModal.style.display = 'flex';
+});
+
+certificationIcon.addEventListener('dblclick', () => {
+    certificateModal.style.display = 'flex';
 });
 
 // Open settings modal
@@ -95,6 +102,7 @@ makeDraggable(cvIcon);
 makeDraggable(minesweeperIcon);
 makeDraggable(tictactoeIcon);
 makeDraggable(workIcon);
+makeDraggable(certificationIcon);
 
 // Make modals draggable by header
 function makeModalDraggable(modal) {
@@ -137,6 +145,7 @@ makeModalDraggable(minesweeperModal);
 makeModalDraggable(tictactoeModal);
 makeModalDraggable(settingsModal);
 makeModalDraggable(workModal);
+makeModalDraggable(certificateModal);
 
 // Date and Time
 function updateDateTime() {
